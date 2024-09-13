@@ -1,3 +1,4 @@
-print("ZACINAME GITOVAT")
-print("PRIDAVAM DALSI PRINT")
-print("Projekt 1")
+var1 = "pes"
+var2 = "kocka"
+print(var1)
+print(input("Vyber si variable: "))

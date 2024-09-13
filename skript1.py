@@ -1,0 +1,1 @@
+print("Ahoj studenti Pytohn Akademie")

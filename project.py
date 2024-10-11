@@ -79,5 +79,8 @@ highest_number = max(frequency)
 
 for num in set_numbers:
     count_of_spaces = highest_number - numbers_of_length.count(num)
-    print(f"{num:2d} | {star * numbers_of_length.count(num)} {space * count_of_spaces} | {numbers_of_length.count(num)}")
+    print(
+        f"{num:2d} | {star * numbers_of_length.count(num)}"
+        f"{space * count_of_spaces} | {numbers_of_length.count(num)}"
+    )
 

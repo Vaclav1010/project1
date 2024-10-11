@@ -26,7 +26,7 @@ print(separator)
 
 if password == str(user_data.get(user_name)):
     print(f"WELCOME TO THE APP, {user_name.upper()}!")
-    print("WE HAVE 3 TEXTS TO BE ANALYZED.")    
+    print(f"WE HAVE {len(TEXTS)} TEXTS TO BE ANALYZED.")    
     
     print(separator)
     
@@ -36,19 +36,20 @@ else:
     exit()
          
 while True:   
-    user_choice = input("CHOOSE TEXT NUMBER TO ANALYZE - |1|2|3|: \n")
+    choice = input(f"ENTER A NUMBER BTW. 1 AND {len(TEXTS)} TO SELECT:\n")
+
     print(separator)
 
-    if not int(user_choice.isnumeric()) or int(user_choice) not in range(1,4):
-        os.system("cls")
+    if not choice.isnumeric() or int(choice) not in range(1, len(TEXTS) + 1):
+        os.system("cls") 
         print("INVALID INPUT. CHOOSE ONLY NUMBERS BETWEEN 1-3")
         exit()
             
     else:
-        user_choice = TEXTS[int(user_choice) - 1]
+        choice = TEXTS[int(choice) - 1]
         break
 
-splited_text = user_choice.split()
+splited_text = choice.split()
 words = [word.strip(",.?!") for word in splited_text]
 numbers_of_length = [len(word) for word in words]
 title_case = [word for word in words if word.istitle()]
@@ -70,7 +71,7 @@ print(separator)
 star = "*"
 space = " "
 set_numbers = set(numbers_of_length)
-frequency =  []
+frequency = []
 
 for each in set_numbers:
     frequency.append(numbers_of_length.count(each))
